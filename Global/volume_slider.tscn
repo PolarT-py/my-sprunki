@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkk0q02b484nh"]
+
+[ext_resource type="Script" path="res://Menus/v_slider.gd" id="1_feljm"]
+
+[node name="volume_slider" type="Node2D"]
+
+[node name="VSlider" type="VSlider" parent="."]
+offset_left = 46.0
+offset_top = 576.0
+offset_right = 62.0
+offset_bottom = 775.0
+max_value = 120.0
+value = 80.0
+script = ExtResource("1_feljm")

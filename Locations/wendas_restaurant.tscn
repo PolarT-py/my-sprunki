@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=3 uid="uid://dti6wayxbuwbe"]
+
+[ext_resource type="Script" path="res://Locations/wendas_restaurant.gd" id="1_ly4tp"]
+[ext_resource type="Texture2D" uid="uid://ciuubsik7v4fc" path="res://Assets/Images/backgrounds/wendas-restaurant-background.png" id="2_7nm44"]
+[ext_resource type="Script" path="res://Locations/back_map.gd" id="2_i0bct"]
+[ext_resource type="Script" path="res://Locations/wendas_restaurant_table.gd" id="3_5srl6"]
+[ext_resource type="PackedScene" uid="uid://fh6o20vcn8cm" path="res://Sprunkis/sprunki_eating.tscn" id="3_62cwe"]
+[ext_resource type="Texture2D" uid="uid://bcywgjtiirq0c" path="res://Assets/Images/backgrounds/wendas-restaurant-table.png" id="3_72t1y"]
+[ext_resource type="Texture2D" uid="uid://bpxy8atvkckvh" path="res://Assets/Images/etc/plate1.png" id="5_sibim"]
+[ext_resource type="Script" path="res://Locations/foods.gd" id="8_geld3"]
+[ext_resource type="PackedScene" uid="uid://bboo64clufg6l" path="res://Refreshments/foods/food.tscn" id="8_ma1uk"]
+[ext_resource type="PackedScene" uid="uid://8v73owm4lc0" path="res://Refreshments/foods/chicken_nugget.tscn" id="10_45fh4"]
+[ext_resource type="PackedScene" uid="uid://jvqb3lditxqv" path="res://Refreshments/foods/fry.tscn" id="11_of1xj"]
+[ext_resource type="Script" path="res://Locations/deco.gd" id="12_7f6gf"]
+[ext_resource type="Texture2D" uid="uid://b2mvnwa06p2" path="res://Assets/Images/refreshments/wendas_fry_cup.svg" id="12_p55n6"]
+
+[node name="wendas_restaurant" type="Node2D"]
+script = ExtResource("1_ly4tp")
+
+[node name="Wendas-restaurant-background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_7nm44")
+
+[node name="sprunki_eating" parent="Wendas-restaurant-background" instance=ExtResource("3_62cwe")]
+position = Vector2(43, -100)
+scale = Vector2(2.34, 2.34)
+
+[node name="Wendas-restaurant-table" type="Sprite2D" parent="Wendas-restaurant-background"]
+texture = ExtResource("3_72t1y")
+script = ExtResource("3_5srl6")
+
+[node name="Plate1" type="Sprite2D" parent="Wendas-restaurant-background/Wendas-restaurant-table"]
+position = Vector2(43, 424)
+scale = Vector2(2.34, 2.34)
+texture = ExtResource("5_sibim")
+
+[node name="back" type="Button" parent="."]
+offset_left = 34.0
+offset_top = 33.0
+offset_right = 198.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 40
+button_mask = 3
+text = "Back"
+script = ExtResource("2_i0bct")
+
+[node name="Foods" type="Node2D" parent="."]
+script = ExtResource("8_geld3")
+
+[node name="Food" parent="Foods" instance=ExtResource("8_ma1uk")]
+position = Vector2(902, 892)
+scale = Vector2(0.999999, 0.999999)
+
+[node name="Food2" parent="Foods" instance=ExtResource("8_ma1uk")]
+position = Vector2(874, 860)
+scale = Vector2(0.999999, 0.999999)
+
+[node name="Food3" parent="Foods" instance=ExtResource("8_ma1uk")]
+position = Vector2(845, 828)
+scale = Vector2(0.999999, 0.999999)
+
+[node name="chicken_nugget" parent="Foods" instance=ExtResource("10_45fh4")]
+position = Vector2(1116, 824)
+
+[node name="chicken_nugget2" parent="Foods" instance=ExtResource("10_45fh4")]
+position = Vector2(1166, 860)
+
+[node name="chicken_nugget3" parent="Foods" instance=ExtResource("10_45fh4")]
+position = Vector2(1082, 874)
+
+[node name="fry" parent="Foods" instance=ExtResource("11_of1xj")]
+position = Vector2(1467.5, 772.5)
+
+[node name="fry2" parent="Foods" instance=ExtResource("11_of1xj")]
+position = Vector2(1454.5, 780.5)
+
+[node name="fry3" parent="Foods" instance=ExtResource("11_of1xj")]
+position = Vector2(1568.5, 789.5)
+
+[node name="fry4" parent="Foods" instance=ExtResource("11_of1xj")]
+position = Vector2(1535.5, 794.5)
+
+[node name="fry5" parent="Foods" instance=ExtResource("11_of1xj")]
+position = Vector2(1502.5, 782.5)
+
+[node name="fry6" parent="Foods" instance=ExtResource("11_of1xj")]
+position = Vector2(1436.5, 798.5)
+
+[node name="fry7" parent="Foods" instance=ExtResource("11_of1xj")]
+position = Vector2(1418.5, 782.5)
+
+[node name="fry8" parent="Foods" instance=ExtResource("11_of1xj")]
+position = Vector2(1466.5, 807.5)
+
+[node name="fry9" parent="Foods" instance=ExtResource("11_of1xj")]
+position = Vector2(1515.5, 779.5)
+
+[node name="fry10" parent="Foods" instance=ExtResource("11_of1xj")]
+position = Vector2(1552.5, 775.5)
+
+[node name="fry11" parent="Foods" instance=ExtResource("11_of1xj")]
+position = Vector2(1496.5, 795.5)
+
+[node name="fry12" parent="Foods" instance=ExtResource("11_of1xj")]
+position = Vector2(1495.5, 787.5)
+
+[node name="Deco" type="Node2D" parent="."]
+script = ExtResource("12_7f6gf")
+
+[node name="WendasFryCup" type="Sprite2D" parent="Deco"]
+position = Vector2(1478, 848)
+scale = Vector2(1.22396, 1.22396)
+texture = ExtResource("12_p55n6")

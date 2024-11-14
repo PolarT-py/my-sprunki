@@ -1,0 +1,18 @@
+# Ideas
+
+1. Wenda Restaurant {
+    a. Just a *normal* restaurant
+    b. Will not exist if you choose to take care of Wenda
+}
+2. Brud Cafe {
+    a. Always serves wrong food
+    b. Will not exist if you chooes to take care of Brud
+}
+
+
+# Sprites
+
+Characters {
+    dimensions: 600 x 600
+    foods:      300 x 300
+}

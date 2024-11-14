@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://bboo64clufg6l"]
+
+[ext_resource type="Script" path="res://Refreshments/foods/food.gd" id="1_eba6f"]
+[ext_resource type="Texture2D" uid="uid://cl2m8x4ri4hy8" path="res://Assets/Images/refreshments/godot/0.svg" id="2_a5868"]
+[ext_resource type="Texture2D" uid="uid://dpksax71vpark" path="res://Assets/Images/refreshments/godot/1.svg" id="3_muu45"]
+[ext_resource type="Texture2D" uid="uid://b4pc3piyui5xs" path="res://Assets/Images/refreshments/godot/2.svg" id="4_aeiv7"]
+[ext_resource type="Texture2D" uid="uid://c5dp6fpo767om" path="res://Assets/Images/refreshments/godot/3.svg" id="5_edw80"]
+[ext_resource type="AudioStream" uid="uid://c4uuj42ai12et" path="res://Assets/Audio/Sounds/eating/Fried Chicken Eating Sound Effect [h_VwzeZPbj8].mp3" id="6_oon1w"]
+[ext_resource type="Texture2D" uid="uid://dwiiee3gr2woq" path="res://Assets/Images/icons/empty.png" id="6_tn250"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ie72q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_a5868")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_muu45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aeiv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_edw80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tn250")
+}],
+"loop": false,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jijed"]
+size = Vector2(128, 128)
+
+[node name="Food" type="Node2D" groups=["food"]]
+script = ExtResource("1_eba6f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ie72q")
+
+[node name="Button" type="Button" parent="AnimatedSprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D_food" type="Area2D" parent="AnimatedSprite2D/Button"]
+position = Vector2(64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Button/Area2D_food"]
+shape = SubResource("RectangleShape2D_jijed")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_oon1w")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="button_down" from="AnimatedSprite2D/Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="AnimatedSprite2D/Button" to="." method="_on_button_button_up"]
+[connection signal="area_shape_entered" from="AnimatedSprite2D/Button/Area2D_food" to="." method="_on_area_2d_area_shape_entered"]

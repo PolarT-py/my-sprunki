@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://vgpy4y7160w0"]
+
+[ext_resource type="Texture2D" uid="uid://82fw3qkyxvm1" path="res://Assets/Images/backgrounds/background-normal.png" id="1_ebh2h"]
+[ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_i76ia"]
+[ext_resource type="FontFile" uid="uid://j4gq8bvs6dw7" path="res://Assets/Fonts/inconsolata/InconsolataZi4varlvarquRegular-42gD.otf" id="2_ul0q5"]
+[ext_resource type="Texture2D" uid="uid://ccsgf6cu6a8be" path="res://Assets/Images/characters/simon/idle.png" id="2_xt8ic"]
+[ext_resource type="FontFile" uid="uid://dkkwsr4x6kyvi" path="res://Assets/Fonts/inconsolata/InconsolataZi4varlvarquBold-o4Xz.otf" id="3_u05lf"]
+[ext_resource type="Script" path="res://Menus/exit_button.gd" id="4_hydim"]
+[ext_resource type="Script" path="res://Menus/start_button.gd" id="4_tcow5"]
+[ext_resource type="PackedScene" uid="uid://dkk0q02b484nh" path="res://Global/volume_slider.tscn" id="8_5tsqs"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_i76ia")
+
+[node name="Background-normal" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_ebh2h")
+
+[node name="Start Button" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 578.0
+offset_right = 1344.0
+offset_bottom = 852.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.8, 0.6, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul0q5")
+theme_override_font_sizes/font_size = 200
+button_mask = 3
+text = "Enter"
+script = ExtResource("4_tcow5")
+
+[node name="Exit Button" type="Button" parent="."]
+offset_left = 650.0
+offset_top = 864.0
+offset_right = 1165.0
+offset_bottom = 1028.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.8, 0.6, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ul0q5")
+theme_override_font_sizes/font_size = 100
+button_mask = 3
+text = "Exit"
+script = ExtResource("4_hydim")
+
+[node name="slider_volume" type="RichTextLabel" parent="."]
+offset_left = 29.0
+offset_top = 526.0
+offset_right = 175.0
+offset_bottom = 568.0
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_ul0q5")
+theme_override_fonts/mono_font = ExtResource("2_ul0q5")
+theme_override_fonts/bold_font = ExtResource("3_u05lf")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "Volume"
+
+[node name="Temp Title" type="RichTextLabel" parent="."]
+offset_left = 389.0
+offset_top = 152.0
+offset_right = 1286.0
+offset_bottom = 574.0
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_ul0q5")
+theme_override_fonts/mono_font = ExtResource("2_ul0q5")
+theme_override_fonts/bold_font = ExtResource("3_u05lf")
+theme_override_font_sizes/bold_italics_font_size = 200
+theme_override_font_sizes/italics_font_size = 200
+theme_override_font_sizes/mono_font_size = 200
+theme_override_font_sizes/normal_font_size = 200
+theme_override_font_sizes/bold_font_size = 200
+bbcode_enabled = true
+text = "My Sprunki"
+
+[node name="notice" type="RichTextLabel" parent="."]
+offset_left = 8.0
+offset_top = 1032.0
+offset_right = 843.0
+offset_bottom = 1090.0
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_ul0q5")
+theme_override_fonts/mono_font = ExtResource("2_ul0q5")
+theme_override_fonts/bold_font = ExtResource("3_u05lf")
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "This game is a fan project inspired by Sprunki, created by NyankoBfLol. It is an independent project and not affiliated with or endorsed by the original creators."
+
+[node name="simon" type="Sprite2D" parent="."]
+position = Vector2(1287, 564)
+texture = ExtResource("2_xt8ic")
+
+[node name="volume_slider" parent="." instance=ExtResource("8_5tsqs")]

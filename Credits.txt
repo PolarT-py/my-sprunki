@@ -1,0 +1,44 @@
+# Credits will be added to the game and not just in this txt file
+
+
+#         #
+# CREDITS #
+#         #
+
+
+
+# Art
+
+
+All art made by polartblock (creator of this game)
+Many food art inspired by other games:
+- Mukbang Simon on Julian's editor
+
+
+
+
+# Music
+
+
+"Cipher" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+"Presenterator" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0 License
+http://creativecommons.org/licenses/by/4.0/
+
+
+
+# Inspirations
+
+
+Thanks to Mukbang Simon on Julian's editor for the eating idea.
+Inside of Wenda's restaurant is basically a copy of Mukbang Simon.
+
+
+# Sounds
+
+
+Eating sound - "Assets/Audio/Sounds/eating/Fried Chicken Eating Sound Effect [h_VwzeZPbj8].mp3"
+ - https://www.youtube.com/watch?v=h_VwzeZPbj8&ab_channel=MayonesaAlacena

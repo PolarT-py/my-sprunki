@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://bjyrmndfrdg6k"]
+
+[ext_resource type="Texture2D" uid="uid://82fw3qkyxvm1" path="res://Assets/Images/backgrounds/background-normal.png" id="1_47q0p"]
+[ext_resource type="Script" path="res://Menus/map_menu.gd" id="1_r6bud"]
+[ext_resource type="Texture2D" uid="uid://ccsgf6cu6a8be" path="res://Assets/Images/characters/simon/idle.png" id="2_2vmw3"]
+[ext_resource type="Script" path="res://Menus/wendas_button.gd" id="3_4o3ys"]
+[ext_resource type="Texture2D" uid="uid://dm4bwfyjrayh1" path="res://Assets/Images/map_icons/wendas.png" id="3_r01mf"]
+[ext_resource type="FontFile" uid="uid://j4gq8bvs6dw7" path="res://Assets/Fonts/inconsolata/InconsolataZi4varlvarquRegular-42gD.otf" id="5_j8kjr"]
+[ext_resource type="Script" path="res://Menus/back.gd" id="5_sf50b"]
+[ext_resource type="FontFile" uid="uid://dkkwsr4x6kyvi" path="res://Assets/Fonts/inconsolata/InconsolataZi4varlvarquBold-o4Xz.otf" id="6_1ovif"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7nyjr"]
+
+[node name="map_menu" type="Node2D"]
+script = ExtResource("1_r6bud")
+
+[node name="Background-normal" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_47q0p")
+
+[node name="Background-normal" type="Sprite2D" parent="Background-normal"]
+position = Vector2(1920, 0)
+texture = ExtResource("1_47q0p")
+
+[node name="Idle" type="Sprite2D" parent="."]
+position = Vector2(1635, 754)
+scale = Vector2(0.136667, 0.141667)
+texture = ExtResource("2_2vmw3")
+
+[node name="Wendas" type="Node2D" parent="."]
+
+[node name="button" type="Button" parent="Wendas"]
+offset_left = 234.0
+offset_top = 382.0
+offset_right = 609.0
+offset_bottom = 678.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7nyjr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_7nyjr")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7nyjr")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_7nyjr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7nyjr")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_7nyjr")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7nyjr")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_7nyjr")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7nyjr")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_7nyjr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7nyjr")
+script = ExtResource("3_4o3ys")
+
+[node name="sprite" type="Sprite2D" parent="Wendas"]
+position = Vector2(421, 530)
+scale = Vector2(0.6475, 0.6475)
+texture = ExtResource("3_r01mf")
+
+[node name="title" type="RichTextLabel" parent="Wendas"]
+offset_left = 322.0
+offset_top = 673.0
+offset_right = 632.0
+offset_bottom = 741.0
+tooltip_text = "Wenda's restaurant"
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("5_j8kjr")
+theme_override_fonts/mono_font = ExtResource("5_j8kjr")
+theme_override_fonts/bold_font = ExtResource("6_1ovif")
+theme_override_font_sizes/bold_italics_font_size = 60
+theme_override_font_sizes/italics_font_size = 60
+theme_override_font_sizes/mono_font_size = 60
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
+bbcode_enabled = true
+text = "Wenda's"
+
+[node name="back" type="Button" parent="."]
+offset_left = 34.0
+offset_top = 33.0
+offset_right = 198.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 40
+button_mask = 3
+text = "Back"
+script = ExtResource("5_sf50b")

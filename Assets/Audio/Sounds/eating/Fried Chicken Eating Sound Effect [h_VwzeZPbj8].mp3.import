@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4uuj42ai12et"
+path="res://.godot/imported/Fried Chicken Eating Sound Effect [h_VwzeZPbj8].mp3-ea232aadec680ae76067d93a73fb0234.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Sounds/eating/Fried Chicken Eating Sound Effect [h_VwzeZPbj8].mp3"
+dest_files=["res://.godot/imported/Fried Chicken Eating Sound Effect [h_VwzeZPbj8].mp3-ea232aadec680ae76067d93a73fb0234.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
