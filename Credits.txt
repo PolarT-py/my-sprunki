@@ -42,3 +42,6 @@ Inside of Wenda's restaurant is basically a copy of Mukbang Simon.
 
 Eating sound - "Assets/Audio/Sounds/eating/Fried Chicken Eating Sound Effect [h_VwzeZPbj8].mp3"
  - https://www.youtube.com/watch?v=h_VwzeZPbj8&ab_channel=MayonesaAlacena
+
+Eating sound 2 - "Assets/Audio/Sounds/eating/Eating Sound Effect - Free Download & No Copyright [lW48L6ksMw0].mp3"
+ - https://www.youtube.com/watch?v=lW48L6ksMw0&ab_channel=SoundEffects-NoCopyright%26FreeDownload

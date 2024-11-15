@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://4jdwmg3px88m"]
+[gd_scene load_steps=3 format=3 uid="uid://4jdwmg3px88m"]
 
 [ext_resource type="Script" path="res://Assets/Audio/Music/audio_player.gd" id="1_87y33"]
+[ext_resource type="AudioStream" uid="uid://c4uuj42ai12et" path="res://Assets/Audio/Sounds/eating/Fried Chicken Eating Sound Effect [h_VwzeZPbj8].mp3" id="1_iy4fa"]
 
 [node name="AudioPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_iy4fa")
+parameters/looping = true
 script = ExtResource("1_87y33")

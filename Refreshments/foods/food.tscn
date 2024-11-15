@@ -15,6 +15,9 @@ animations = [{
 "texture": ExtResource("2_a5868")
 }, {
 "duration": 1.0,
+"texture": ExtResource("2_a5868")
+}, {
+"duration": 1.0,
 "texture": ExtResource("3_muu45")
 }, {
 "duration": 1.0,

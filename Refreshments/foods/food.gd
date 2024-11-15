@@ -2,7 +2,13 @@ extends Node2D
 
 
 # If you want to create your own food, you have to go to your file manager, then duplicate res://Refreshments/foods/food.tscn and rename it to the food you want to add. Then edit the animation.
-
+# -- Frames Guide --
+# Frame 0:  Idle
+# Frame 1:  Dragging
+# Frame 2+: Eating animations
+# Tip: Add a empty.png at the very end of the animation for the food's last bite to be biten
+#              |
+#              L  It is located at res://Assets/Images/icons/empty.png
 
 var dragging = false
 var of = Vector2(0, 0)
@@ -11,11 +17,16 @@ var being_eaten_first = true
 var just_released = false
 var original_pos = self.position
 
+var food_after_eat_time = {
+	"Food": 1,
+	"fry": 0,
+	"chicken_nugget": 1,
+	"bread": 2,
+}
 
+
+# Change speed of eating food in the SpriteFrames editor in the AnimatedSprite2D
 func _ready() -> void:
-	# Speed of eating, also basically FPS
-	# Change in animation editor
-	#$"AnimatedSprite2D".speed_scale = 4
 	# Starting frame
 	$"AnimatedSprite2D".frame = 0
 	pass
@@ -23,14 +34,20 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	area_2d_shape_inside()
 	if dragging and not being_eaten:
+		# Normal dragging in the air
 		just_released = false
 		position = get_global_mouse_position() - of
+		# Make sprite switch the the dragging frame
+		$"AnimatedSprite2D".frame = 1
 	else:
 		# Falling
-		#print(self.position.y, " | ", original_pos.y)
 		if self.position.y < original_pos.y and not being_eaten:
 			self.position.y += 5
 			just_released = false
+		#print(self.position.y, " | ", original_pos.y)
+	if not dragging and not being_eaten:
+		# Reset sprite to normal frame
+		$"AnimatedSprite2D".frame = 0
 
 func area_2d_shape_inside():
 	for area in $"AnimatedSprite2D/Button/Area2D_food".get_overlapping_areas():
@@ -41,12 +58,17 @@ func eat() -> void:
 	#print("eat food signal recieved")
 	# Set to 1 so it looks like it instantly ate
 	# Oh and add empty.png to animation as lazy way to make them eat longer
-	$"AnimatedSprite2D".frame = 1
+	$"AnimatedSprite2D".frame = 2
 	$"AnimatedSprite2D".play()
 	$"AudioStreamPlayer".play()
 	being_eaten = true
 	being_eaten_first = false
 	just_released = true
+	for area in $"AnimatedSprite2D/Button/Area2D_food".get_overlapping_areas():
+		if area.get_parent().name == "sprunki_eating":
+			area.get_parent().first_new_bite = true
+			area.get_parent().get_node("open_mouth_timer").wait_time = 0.03
+			#print("YEEHAW")
 
 func _on_button_button_down() -> void:
 	just_released = false
@@ -87,6 +109,6 @@ func _on_animated_sprite_2d_frame_changed() -> void:
 		if area.get_parent().name == "sprunki_eating":
 			area.get_parent().new_bite = true
 			#area.get_children()[0].texture = area.get_parent().open_mouth
-			print("REQUEST SENT")
+			#print("REQUEST SENT")
 	# WRONG FUNCTION x2
 	pass

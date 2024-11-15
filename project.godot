@@ -21,10 +21,7 @@ config/icon="res://Assets/Images/characters/simon/idle.png"
 
 AudioPlayer="*res://Assets/Audio/Music/audio_player.tscn"
 MouseStuff="*res://Global/mouse_stuff.tscn"
-
-[debug]
-
-settings/stdout/print_fps=true
+Global="*res://Global/global.tscn"
 
 [display]
 

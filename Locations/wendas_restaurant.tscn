@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dti6wayxbuwbe"]
+[gd_scene load_steps=15 format=3 uid="uid://dti6wayxbuwbe"]
 
 [ext_resource type="Script" path="res://Locations/wendas_restaurant.gd" id="1_ly4tp"]
 [ext_resource type="Texture2D" uid="uid://ciuubsik7v4fc" path="res://Assets/Images/backgrounds/wendas-restaurant-background.png" id="2_7nm44"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bpxy8atvkckvh" path="res://Assets/Images/etc/plate1.png" id="5_sibim"]
 [ext_resource type="Script" path="res://Locations/foods.gd" id="8_geld3"]
 [ext_resource type="PackedScene" uid="uid://bboo64clufg6l" path="res://Refreshments/foods/food.tscn" id="8_ma1uk"]
+[ext_resource type="PackedScene" uid="uid://cutgbilmufhms" path="res://Refreshments/foods/bread.tscn" id="9_e4b7a"]
 [ext_resource type="PackedScene" uid="uid://8v73owm4lc0" path="res://Refreshments/foods/chicken_nugget.tscn" id="10_45fh4"]
 [ext_resource type="PackedScene" uid="uid://jvqb3lditxqv" path="res://Refreshments/foods/fry.tscn" id="11_of1xj"]
 [ext_resource type="Script" path="res://Locations/deco.gd" id="12_7f6gf"]
@@ -16,6 +17,7 @@
 
 [node name="wendas_restaurant" type="Node2D"]
 script = ExtResource("1_ly4tp")
+metadata/_edit_vertical_guides_ = [-742.0]
 
 [node name="Wendas-restaurant-background" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
@@ -47,16 +49,19 @@ script = ExtResource("2_i0bct")
 [node name="Foods" type="Node2D" parent="."]
 script = ExtResource("8_geld3")
 
+[node name="bread" parent="Foods" instance=ExtResource("9_e4b7a")]
+position = Vector2(916, 820)
+
 [node name="Food" parent="Foods" instance=ExtResource("8_ma1uk")]
-position = Vector2(902, 892)
+position = Vector2(936, 865)
 scale = Vector2(0.999999, 0.999999)
 
 [node name="Food2" parent="Foods" instance=ExtResource("8_ma1uk")]
-position = Vector2(874, 860)
+position = Vector2(908, 833)
 scale = Vector2(0.999999, 0.999999)
 
 [node name="Food3" parent="Foods" instance=ExtResource("8_ma1uk")]
-position = Vector2(845, 828)
+position = Vector2(879, 801)
 scale = Vector2(0.999999, 0.999999)
 
 [node name="chicken_nugget" parent="Foods" instance=ExtResource("10_45fh4")]

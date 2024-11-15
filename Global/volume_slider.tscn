@@ -9,6 +9,5 @@ offset_left = 46.0
 offset_top = 576.0
 offset_right = 62.0
 offset_bottom = 775.0
-max_value = 120.0
-value = 80.0
+value = 10.0
 script = ExtResource("1_feljm")
