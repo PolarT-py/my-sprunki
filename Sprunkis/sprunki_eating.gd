@@ -11,6 +11,7 @@ var food_being_dragged
 var currently_eating = false
 var new_bite = false
 var first_new_bite = true
+var final_munches = false
 
 
 func change_char(new_char = "simon") -> void:
@@ -57,6 +58,14 @@ func _process(delta: float) -> void:
 				first_new_bite = false
 				#print("I TOOK A NEW BITE!!!!!!!!!!!!!!!!!!")
 		#print(new_bite)
+	# If final munches
+	if final_munches:
+		if $"Area2D/Sprite2D".texture in [idle, eat2]:
+			$"Area2D/Sprite2D".texture = eat1
+			$"Timer".start()
+		else:
+			$"Area2D/Sprite2D".texture = eat2
+			$"Timer".start()
 
 # I should make it so that the sprunki bites(open mouth) again when the animation gets updated
 # - finished
@@ -64,7 +73,7 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	for area in $"Area2D".get_overlapping_areas():
 		var food_node = area.get_parent().get_parent().get_parent()
-		if food_node.being_eaten and not new_bite:
+		if food_node.being_eaten and not new_bite and not final_munches:
 			if $"Area2D/Sprite2D".texture in [idle, eat2]:
 				$"Area2D/Sprite2D".texture = eat1
 				$"Timer".start()
@@ -82,4 +91,5 @@ func _on_open_mouth_timer_timeout() -> void:
 
 
 func _on_after_eat_timer_timeout() -> void:
-	pass
+	currently_eating = false
+	final_munches = false

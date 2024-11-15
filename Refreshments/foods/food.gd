@@ -17,6 +17,7 @@ var being_eaten_first = true
 var just_released = false
 var original_pos = self.position
 
+# Time sprunki munches on food after food gone
 var food_after_eat_time = {
 	"Food": 1,
 	"fry": 0,
@@ -91,15 +92,10 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	for area in $"AnimatedSprite2D/Button/Area2D_food".get_overlapping_areas():
 		if area.get_parent().name == "sprunki_eating":
 			area.get_parent().currently_eating = false
+			#area.get_parent().get_node("after_eat_timer").wait_time = food_after_eat_time[name]
+			#area.get_parent().final_munches = true
+	#
 	queue_free()
-
-
-func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	# Problem with this is it only accounts for the frame the food enters
-	# So I made another function
-	#if area.get_parent().name == "sprunki_eating" and just_released:
-		#eat()
-	pass
 
 
 func _on_animated_sprite_2d_frame_changed() -> void:
