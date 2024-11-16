@@ -45,3 +45,6 @@ Eating sound - "Assets/Audio/Sounds/eating/Fried Chicken Eating Sound Effect [h_
 
 Eating sound 2 - "Assets/Audio/Sounds/eating/Eating Sound Effect - Free Download & No Copyright [lW48L6ksMw0].mp3"
  - https://www.youtube.com/watch?v=lW48L6ksMw0&ab_channel=SoundEffects-NoCopyright%26FreeDownload
+
+ Eating sound 3 - "Assets/Audio/Sounds/eating/Hamburger Eating Sound Effect [O0b6IrtN4zk].mp3"
+ - https://www.youtube.com/watch?v=O0b6IrtN4zk&ab_channel=MayonesaAlacena

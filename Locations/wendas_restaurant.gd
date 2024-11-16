@@ -8,4 +8,4 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if $"Foods".get_child_count() == 0:
-		print("ALL DONE")
+		get_tree().change_scene_to_file("res://Locations/wendas_restaurant_order.tscn")

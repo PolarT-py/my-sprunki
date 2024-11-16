@@ -18,5 +18,6 @@ func up_animation() -> void:
 	tween.tween_property(self, "global_position", global_position - Vector2(0, 1080), 1.0)
 
 
-func _on_fast_food_button_pressed() -> void:
-	up_animation()
+# Already being called
+#func _on_fast_food_button_pressed() -> void:
+	#up_animation()

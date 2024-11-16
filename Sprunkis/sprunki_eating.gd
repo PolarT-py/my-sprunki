@@ -15,14 +15,15 @@ var new_bite = false
 var first_new_bite = true
 var final_munches = false
 var original_position = global_position
+var the_center = Vector2(1000, 450)
 
 
 func _ready() -> void:
 	change_char("simon")
 	# Smoothly go from where sprunki was last time to the "middle"
 	global_position = Global.your_sprunkis_last_position_before_going_to_eat
-	tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_EXPO)
-	tween.tween_property(self, "global_position", Vector2(1000, 450), 1.2)
+	tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_CIRC)
+	tween.tween_property(self, "global_position", the_center, 1.2)
 
 func change_char(new_char = "simon") -> void:
 	# Preloading too skibidi for me, because I'm too lazy
@@ -34,13 +35,16 @@ func change_char(new_char = "simon") -> void:
 	open_mouth = load("res://Assets/Images/characters/" + character + "/open_mouth.png")
 
 func _process(delta: float) -> void:
-	# Check collision
+	# Check collision for foods
 	for area in $"Area2D".get_overlapping_areas():
 		var food_node = area.get_parent().get_parent().get_parent()
 		if area.name == "Area2D_food" and food_node.just_released and food_node.being_eaten_first:
-			#print("Yes I'm eating a peice of food")
 			currently_eating = true
 			$"Timer".start()
+	# Cool bobbing animation
+	var offset = sin(Time.get_ticks_msec() / 1000.0 * 0.3 * TAU) * 2
+	global_position = original_position + the_center - Vector2(0, offset)
+	# Idk why but it looks smoother with 'original_position' in
 
 	# Animation
 	# Notice: This gets the food's root node, not the Area2D node
