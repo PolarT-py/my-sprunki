@@ -29,4 +29,4 @@ func _on_timer_timeout() -> void:
 	get_parent().get_parent().get_parent().get_node("sprunki_choosing_food_wr").global_position
 	print(Global.your_sprunkis_last_position_before_going_to_eat)
 	# Finally change scene to eat
-	get_tree().change_scene_to_file("res://Locations/wendas_restaurant.tscn")
+	#get_tree().change_scene_to_file("res://Locations/wendas_restaurant.tscn")
