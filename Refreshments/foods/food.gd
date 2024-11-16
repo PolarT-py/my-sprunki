@@ -68,7 +68,7 @@ func eat() -> void:
 	for area in $"AnimatedSprite2D/Button/Area2D_food".get_overlapping_areas():
 		if area.get_parent().name == "sprunki_eating":
 			area.get_parent().first_new_bite = true
-			area.get_parent().get_node("open_mouth_timer").wait_time = 0.03
+			area.get_parent().get_node("open_mouth_timer").wait_time = 0.01
 			#print("YEEHAW")
 
 func _on_button_button_down() -> void:

@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Locations/wendas_restaurant.gd" id="1_ly4tp"]
 [ext_resource type="Texture2D" uid="uid://ciuubsik7v4fc" path="res://Assets/Images/backgrounds/wendas-restaurant-background.png" id="2_7nm44"]
-[ext_resource type="Script" path="res://Locations/back_map.gd" id="2_i0bct"]
 [ext_resource type="Script" path="res://Locations/wendas_restaurant_table.gd" id="3_5srl6"]
 [ext_resource type="PackedScene" uid="uid://fh6o20vcn8cm" path="res://Sprunkis/sprunki_eating.tscn" id="3_62cwe"]
 [ext_resource type="Texture2D" uid="uid://bcywgjtiirq0c" path="res://Assets/Images/backgrounds/wendas-restaurant-table.png" id="3_72t1y"]
 [ext_resource type="Texture2D" uid="uid://bpxy8atvkckvh" path="res://Assets/Images/etc/plate1.png" id="5_sibim"]
+[ext_resource type="Script" path="res://Locations/wendas_restaurant_dining_back.gd" id="7_560il"]
 [ext_resource type="Script" path="res://Locations/foods.gd" id="8_geld3"]
 [ext_resource type="PackedScene" uid="uid://bboo64clufg6l" path="res://Refreshments/foods/food.tscn" id="8_ma1uk"]
 [ext_resource type="PackedScene" uid="uid://cutgbilmufhms" path="res://Refreshments/foods/bread.tscn" id="9_e4b7a"]
@@ -24,7 +24,7 @@ position = Vector2(960, 540)
 texture = ExtResource("2_7nm44")
 
 [node name="sprunki_eating" parent="Wendas-restaurant-background" instance=ExtResource("3_62cwe")]
-position = Vector2(43, -100)
+position = Vector2(37, -90)
 scale = Vector2(2.34, 2.34)
 
 [node name="Wendas-restaurant-table" type="Sprite2D" parent="Wendas-restaurant-background"]
@@ -44,7 +44,7 @@ offset_bottom = 99.0
 theme_override_font_sizes/font_size = 40
 button_mask = 3
 text = "Back"
-script = ExtResource("2_i0bct")
+script = ExtResource("7_560il")
 
 [node name="Foods" type="Node2D" parent="."]
 script = ExtResource("8_geld3")

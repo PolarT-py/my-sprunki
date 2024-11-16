@@ -1,6 +1,8 @@
 extends Node2D
 
 
+var tween
+
 var idle
 var eat1
 var eat2
@@ -12,20 +14,24 @@ var currently_eating = false
 var new_bite = false
 var first_new_bite = true
 var final_munches = false
+var original_position = global_position
 
+
+func _ready() -> void:
+	change_char("simon")
+	# Smoothly go from where sprunki was last time to the "middle"
+	global_position = Global.your_sprunkis_last_position_before_going_to_eat
+	tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_EXPO)
+	tween.tween_property(self, "global_position", Vector2(1000, 450), 1.2)
 
 func change_char(new_char = "simon") -> void:
-	# Preloading too skibidi for me
+	# Preloading too skibidi for me, because I'm too lazy
 	Global.character = new_char
 	character = Global.character
 	idle = load("res://Assets/Images/characters/" + character + "/idle.png")
 	eat1 = load("res://Assets/Images/characters/" + character + "/eat1.png")
 	eat2 = load("res://Assets/Images/characters/" + character + "/eat2.png")
 	open_mouth = load("res://Assets/Images/characters/" + character + "/open_mouth.png")
-
-
-func _ready() -> void:
-	change_char("simon")
 
 func _process(delta: float) -> void:
 	# Check collision

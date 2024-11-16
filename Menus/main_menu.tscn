@@ -92,6 +92,30 @@ theme_override_font_sizes/bold_font_size = 200
 bbcode_enabled = true
 text = "My Sprunki"
 
+[node name="madeingodot" type="RichTextLabel" parent="."]
+offset_left = 1589.0
+offset_top = 1053.0
+offset_right = 1925.0
+offset_bottom = 1081.0
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("2_ul0q5")
+theme_override_fonts/mono_font = ExtResource("2_ul0q5")
+theme_override_fonts/bold_font = ExtResource("3_u05lf")
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 20
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "Made with the Godot Game Engine!"
+
 [node name="notice" type="RichTextLabel" parent="."]
 offset_left = 8.0
 offset_top = 1032.0

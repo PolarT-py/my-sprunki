@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://cbwd4nyssbi57"]
+
+[ext_resource type="Texture2D" uid="uid://ciuubsik7v4fc" path="res://Assets/Images/backgrounds/wendas-restaurant-background.png" id="1_3gava"]
+[ext_resource type="Script" path="res://Locations/wendas_restaurant_order.gd" id="1_ngych"]
+[ext_resource type="Texture2D" uid="uid://bcywgjtiirq0c" path="res://Assets/Images/backgrounds/wendas-restaurant-table.png" id="2_4m6hg"]
+[ext_resource type="Texture2D" uid="uid://nlen1ybdbxi6" path="res://Assets/Images/refreshments/chicken_nugget/0.png" id="3_s7bfp"]
+[ext_resource type="PackedScene" uid="uid://b6qbxhbvkokco" path="res://Sprunkis/sprunki_choosing_food_wr.tscn" id="3_tlfsf"]
+[ext_resource type="Texture2D" uid="uid://cq1j4t8syf4ng" path="res://Assets/Images/refreshments/fry/0.png" id="4_0j1ey"]
+[ext_resource type="Script" path="res://Locations/fast_food_button.gd" id="4_4qwqf"]
+[ext_resource type="Script" path="res://Locations/back_map.gd" id="4_f1bqf"]
+[ext_resource type="Script" path="res://Locations/wendas_restaurant_table_menu.gd" id="5_3gnja"]
+[ext_resource type="Script" path="res://Locations/items.gd" id="6_ij74x"]
+
+[node name="wendas_restaurant_order" type="Node2D"]
+script = ExtResource("1_ngych")
+
+[node name="Wendas-restaurant-background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_3gava")
+
+[node name="sprunki_choosing_food_wr" parent="Wendas-restaurant-background" instance=ExtResource("3_tlfsf")]
+position = Vector2(38, -89)
+scale = Vector2(2.35214, 2.35214)
+
+[node name="Wendas-restaurant-table" type="Sprite2D" parent="Wendas-restaurant-background"]
+texture = ExtResource("2_4m6hg")
+script = ExtResource("5_3gnja")
+
+[node name="items" type="Node2D" parent="Wendas-restaurant-background/Wendas-restaurant-table"]
+position = Vector2(-960, -540)
+script = ExtResource("6_ij74x")
+
+[node name="fast_food_button" type="Button" parent="Wendas-restaurant-background/Wendas-restaurant-table/items"]
+offset_left = 47.0
+offset_top = 599.0
+offset_right = 286.0
+offset_bottom = 772.0
+theme_override_font_sizes/font_size = 40
+text = "
+
+Fast Food"
+script = ExtResource("4_4qwqf")
+
+[node name="chicken_nugget" type="Sprite2D" parent="Wendas-restaurant-background/Wendas-restaurant-table/items/fast_food_button"]
+position = Vector2(72, 51.7405)
+scale = Vector2(0.273333, 0.273333)
+texture = ExtResource("3_s7bfp")
+
+[node name="chicken_nugget2" type="Sprite2D" parent="Wendas-restaurant-background/Wendas-restaurant-table/items/fast_food_button"]
+position = Vector2(102, 76.7405)
+scale = Vector2(0.358678, 0.358678)
+texture = ExtResource("3_s7bfp")
+
+[node name="0" type="Sprite2D" parent="Wendas-restaurant-background/Wendas-restaurant-table/items/fast_food_button"]
+position = Vector2(180, 63.7405)
+rotation = -0.0810889
+scale = Vector2(0.406667, 0.406667)
+texture = ExtResource("4_0j1ey")
+
+[node name="1" type="Sprite2D" parent="Wendas-restaurant-background/Wendas-restaurant-table/items/fast_food_button"]
+position = Vector2(172, 66.7405)
+rotation = -0.162178
+scale = Vector2(0.393482, 0.393482)
+texture = ExtResource("4_0j1ey")
+
+[node name="2" type="Sprite2D" parent="Wendas-restaurant-background/Wendas-restaurant-table/items/fast_food_button"]
+position = Vector2(157, 71.7405)
+rotation = -0.243267
+scale = Vector2(0.367072, 0.367072)
+texture = ExtResource("4_0j1ey")
+
+[node name="3" type="Sprite2D" parent="Wendas-restaurant-background/Wendas-restaurant-table/items/fast_food_button"]
+position = Vector2(187, 62.7405)
+rotation = -0.162178
+scale = Vector2(0.347212, 0.347212)
+texture = ExtResource("4_0j1ey")
+
+[node name="Timer" type="Timer" parent="Wendas-restaurant-background/Wendas-restaurant-table/items"]
+one_shot = true
+
+[node name="back" type="Button" parent="."]
+offset_left = 34.0
+offset_top = 33.0
+offset_right = 198.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 40
+button_mask = 3
+text = "Back"
+script = ExtResource("4_f1bqf")
+
+[connection signal="pressed" from="Wendas-restaurant-background/Wendas-restaurant-table/items/fast_food_button" to="Wendas-restaurant-background/Wendas-restaurant-table" method="_on_fast_food_button_pressed"]
+[connection signal="pressed" from="Wendas-restaurant-background/Wendas-restaurant-table/items/fast_food_button" to="Wendas-restaurant-background/Wendas-restaurant-table/items/fast_food_button" method="_on_pressed"]
+[connection signal="timeout" from="Wendas-restaurant-background/Wendas-restaurant-table/items/Timer" to="Wendas-restaurant-background/Wendas-restaurant-table/items/fast_food_button" method="_on_timer_timeout"]
