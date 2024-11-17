@@ -11,8 +11,5 @@ func _ready() -> void:
 	tween.tween_property(self, "position", Vector2(650, 864), 1.2)
 
 
-func _process(delta: float) -> void:
-	pass
-
 func _button_pressed():
 	get_tree().quit()

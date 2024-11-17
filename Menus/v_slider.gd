@@ -13,5 +13,4 @@ func _process(delta: float) -> void:
 func set_global_volume(volume_percent: float) -> void:
 	volume_percent = clamp(volume_percent, 0, max_value)
 	var db = lerp(-80, 0, volume_percent / max_value)
-	print(db)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), db)

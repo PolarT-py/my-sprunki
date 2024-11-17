@@ -1,8 +1,10 @@
 extends AudioStreamPlayer
 
+
 const cipher2 = preload("res://Assets/Audio/Music/Cipher2.mp3")
 const presenterator = preload("res://Assets/Audio/Music/Presenterator.mp3")
 var global_volume = 100
+
 
 func _play_music(music: AudioStream, volume = 0.0,):
 	if stream == music:

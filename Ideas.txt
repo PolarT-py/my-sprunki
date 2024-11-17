@@ -5,10 +5,27 @@
     b. Will not exist if you choose to take care of Wenda
     c. When you go in, you will choose what to eat, then you'll
        be sent to eating area
+    d. Foods I want to add {
+        1. Donut
+        2. Eggs - Boiled and fried
+        3. Bacon
+        4. Chicken tenders
+        5. Ramen
+        6. Chicken leg
+        7. Potato wedges
+        8. Sushi
+        9. Mango slices
+        10. Dumplings
+        11. Pizza
+        12. Cake
+    }
 }
 2. Brud Cafe {
     a. Always serves wrong food
     b. Will not exist if you chooes to take care of Brud
+}
+3. Stuff {
+    - for the restaurants, 2 can not co-exist with eachother
 }
 
 

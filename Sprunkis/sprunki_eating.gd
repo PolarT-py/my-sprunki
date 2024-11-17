@@ -17,13 +17,16 @@ var final_munches = false
 var original_position = global_position
 var the_center = Vector2(1000, 450)
 
+# I want to make it so you can spam food into this guys mouth without messing up his animation
+
 
 func _ready() -> void:
 	change_char("simon")
-	# Smoothly go from where sprunki was last time to the "middle"
+	# Smoothly go from where sprunki was last time to the "middle" of the screen
 	global_position = Global.your_sprunkis_last_position_before_going_to_eat
 	tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_CIRC)
 	tween.tween_property(self, "global_position", the_center, 1.2)
+
 
 func change_char(new_char = "simon") -> void:
 	# Preloading too skibidi for me, because I'm too lazy
@@ -33,6 +36,7 @@ func change_char(new_char = "simon") -> void:
 	eat1 = load("res://Assets/Images/characters/" + character + "/eat1.png")
 	eat2 = load("res://Assets/Images/characters/" + character + "/eat2.png")
 	open_mouth = load("res://Assets/Images/characters/" + character + "/open_mouth.png")
+
 
 func _process(delta: float) -> void:
 	# Check collision for foods
@@ -89,7 +93,7 @@ func _on_timer_timeout() -> void:
 				$"Timer".start()
 			else:
 				$"Area2D/Sprite2D".texture = eat2
-				$"Timer".start()
+				$"Timer".start() 
 
 
 func _on_open_mouth_timer_timeout() -> void:

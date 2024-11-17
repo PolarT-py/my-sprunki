@@ -1,50 +1,58 @@
-[gd_scene load_steps=8 format=3 uid="uid://8v73owm4lc0"]
+[gd_scene load_steps=11 format=3 uid="uid://dh4sh3tt4s02o"]
 
 [ext_resource type="Script" path="res://Refreshments/foods/food.gd" id="1_eba6f"]
-[ext_resource type="Texture2D" uid="uid://nlen1ybdbxi6" path="res://Assets/Images/refreshments/chicken_nugget/0.png" id="2_n1484"]
-[ext_resource type="Texture2D" uid="uid://c3utb3p4kx3bh" path="res://Assets/Images/refreshments/chicken_nugget/1.png" id="3_hdpyd"]
-[ext_resource type="AudioStream" uid="uid://c4uuj42ai12et" path="res://Assets/Audio/Sounds/eating/Fried Chicken Eating Sound Effect [h_VwzeZPbj8].mp3" id="6_oon1w"]
+[ext_resource type="Texture2D" uid="uid://wycmng0qwwsn" path="res://Assets/Images/refreshments/fried_egg/0.png" id="2_ky6t6"]
+[ext_resource type="Texture2D" uid="uid://d13ijdfdoowig" path="res://Assets/Images/refreshments/fried_egg/-1.png" id="3_x7raf"]
+[ext_resource type="Texture2D" uid="uid://bk0mdfyey6j0m" path="res://Assets/Images/refreshments/fried_egg/1.png" id="4_pafyx"]
+[ext_resource type="Texture2D" uid="uid://dwtueul5kitx8" path="res://Assets/Images/refreshments/fried_egg/2.png" id="5_s1rmq"]
+[ext_resource type="Texture2D" uid="uid://ee4a8a3ag7vm" path="res://Assets/Images/refreshments/fried_egg/3.png" id="6_83ygy"]
 [ext_resource type="Texture2D" uid="uid://dwiiee3gr2woq" path="res://Assets/Images/icons/empty.png" id="6_tn250"]
+[ext_resource type="AudioStream" uid="uid://l8d5rcyjj67p" path="res://Assets/Audio/Sounds/eating/Hamburger Eating Sound Effect [O0b6IrtN4zk].mp3" id="8_judwf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ie72q"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_n1484")
+"texture": ExtResource("2_ky6t6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_n1484")
+"texture": ExtResource("3_x7raf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_hdpyd")
+"texture": ExtResource("4_pafyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s1rmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_83ygy")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_tn250")
 }],
 "loop": false,
 "name": &"default",
-"speed": 0.5
+"speed": 1.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jijed"]
-size = Vector2(181, 233)
+size = Vector2(270, 194)
 
-[node name="chicken_nugget" type="Node2D" groups=["food"]]
+[node name="fried_egg" type="Node2D" groups=["food"]]
 script = ExtResource("1_eba6f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_ie72q")
 
 [node name="Button" type="Button" parent="AnimatedSprite2D"]
 self_modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
-anchor_left = 0.157
-anchor_top = 0.073
-anchor_right = 0.763
-anchor_bottom = 0.853
+anchor_left = 0.017
+anchor_top = 0.167
+anchor_right = 0.923
+anchor_bottom = 0.823
 offset_left = -150.1
-offset_top = -149.9
+offset_top = -150.1
 offset_right = -149.9
 offset_bottom = -149.9
 grow_horizontal = 2
@@ -55,15 +63,15 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Button/Area2D_food"]
-position = Vector2(26.5, 52.5)
+position = Vector2(71, 33)
 shape = SubResource("RectangleShape2D_jijed")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_oon1w")
+stream = ExtResource("8_judwf")
 volume_db = -5.0
+pitch_scale = 2.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="button_down" from="AnimatedSprite2D/Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="AnimatedSprite2D/Button" to="." method="_on_button_button_up"]
-[connection signal="area_shape_entered" from="AnimatedSprite2D/Button/Area2D_food" to="." method="_on_area_2d_area_shape_entered"]

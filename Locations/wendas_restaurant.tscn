@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dti6wayxbuwbe"]
+[gd_scene load_steps=17 format=3 uid="uid://dti6wayxbuwbe"]
 
 [ext_resource type="Script" path="res://Locations/wendas_restaurant.gd" id="1_ly4tp"]
 [ext_resource type="Texture2D" uid="uid://ciuubsik7v4fc" path="res://Assets/Images/backgrounds/wendas-restaurant-background.png" id="2_7nm44"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://Locations/deco.gd" id="12_7f6gf"]
 [ext_resource type="Texture2D" uid="uid://b2mvnwa06p2" path="res://Assets/Images/refreshments/wendas_fry_cup.svg" id="12_p55n6"]
 [ext_resource type="PackedScene" uid="uid://d3gystbflenbk" path="res://Refreshments/foods/hamburger.tscn" id="13_yqffx"]
+[ext_resource type="PackedScene" uid="uid://dh4sh3tt4s02o" path="res://Refreshments/foods/fried_egg.tscn" id="14_2g8lp"]
 
 [node name="wendas_restaurant" type="Node2D"]
 script = ExtResource("1_ly4tp")
@@ -51,19 +52,19 @@ script = ExtResource("7_560il")
 script = ExtResource("8_geld3")
 
 [node name="hamburger2" parent="Foods" instance=ExtResource("13_yqffx")]
-position = Vector2(160, 710)
+position = Vector2(941, 720)
 
 [node name="hamburger" parent="Foods" instance=ExtResource("13_yqffx")]
-position = Vector2(184, 872)
+position = Vector2(905, 783)
 
 [node name="chicken_nugget" parent="Foods" instance=ExtResource("10_45fh4")]
-position = Vector2(556, 995)
+position = Vector2(1148, 773)
 
 [node name="chicken_nugget2" parent="Foods" instance=ExtResource("10_45fh4")]
-position = Vector2(467, 965)
+position = Vector2(1056, 920)
 
 [node name="chicken_nugget3" parent="Foods" instance=ExtResource("10_45fh4")]
-position = Vector2(408, 1016)
+position = Vector2(1128, 862)
 
 [node name="fry" parent="Foods" instance=ExtResource("11_of1xj")]
 position = Vector2(1430, 725)
@@ -81,16 +82,19 @@ position = Vector2(1498, 747)
 position = Vector2(1468.5, 735.5)
 
 [node name="bread" parent="Foods" instance=ExtResource("9_e4b7a")]
-position = Vector2(511, 717)
+position = Vector2(301, 827)
 
 [node name="bread2" parent="Foods" instance=ExtResource("9_e4b7a")]
-position = Vector2(566, 761)
+position = Vector2(389, 775)
 
 [node name="Food" parent="Foods" instance=ExtResource("8_ma1uk")]
-position = Vector2(772, 951)
+position = Vector2(1201, 851)
 
 [node name="Food2" parent="Foods" instance=ExtResource("8_ma1uk")]
-position = Vector2(710, 1004)
+position = Vector2(1178, 917)
+
+[node name="fried_egg" parent="Foods" instance=ExtResource("14_2g8lp")]
+position = Vector2(346, 819)
 
 [node name="Deco" type="Node2D" parent="."]
 script = ExtResource("12_7f6gf")
