@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbwd4nyssbi57"]
+[gd_scene load_steps=19 format=3 uid="uid://cbwd4nyssbi57"]
 
 [ext_resource type="Texture2D" uid="uid://ciuubsik7v4fc" path="res://Assets/Images/backgrounds/wendas-restaurant-background.png" id="1_3gava"]
 [ext_resource type="Script" path="res://Locations/wendas_restaurant_order.gd" id="1_ngych"]
@@ -13,7 +13,11 @@
 [ext_resource type="Script" path="res://Locations/all_food_button.gd" id="10_fswlb"]
 [ext_resource type="Texture2D" uid="uid://bylbtal3hc8bd" path="res://Assets/Images/refreshments/bread/1.png" id="10_u57b3"]
 [ext_resource type="Texture2D" uid="uid://cl2m8x4ri4hy8" path="res://Assets/Images/refreshments/godot/0.svg" id="11_7wj3h"]
-[ext_resource type="Texture2D" uid="uid://dnhyv2e3oaggv" path="res://Assets/Images/refreshments/hamburger/0.png" id="12_i0xc0"]
+[ext_resource type="Texture2D" uid="uid://cs5w83s135v4d" path="res://Assets/Images/refreshments/hamburger/0.png" id="12_i0xc0"]
+[ext_resource type="Script" path="res://Locations/breakfast_button.gd" id="14_sol4v"]
+[ext_resource type="Texture2D" uid="uid://isa3gflvn4sy" path="res://Assets/Images/refreshments/bread/0.png" id="15_lwq8p"]
+[ext_resource type="Texture2D" uid="uid://dwtueul5kitx8" path="res://Assets/Images/refreshments/fried_egg/2.png" id="16_pmmlp"]
+[ext_resource type="Texture2D" uid="uid://bafqj45qj6a6g" path="res://Assets/Images/refreshments/bacon/1.png" id="17_nnqw3"]
 
 [node name="wendas_restaurant_order" type="Node2D"]
 script = ExtResource("1_ngych")
@@ -118,6 +122,41 @@ position = Vector2(118, 55)
 scale = Vector2(0.596667, 0.596667)
 texture = ExtResource("12_i0xc0")
 
+[node name="breakfast_button" type="Button" parent="Wendas-restaurant-background/Wendas-restaurant-table/items"]
+offset_left = 311.0
+offset_top = 631.0
+offset_right = 550.0
+offset_bottom = 804.0
+theme_override_font_sizes/font_size = 40
+text = "
+
+Breakfast"
+script = ExtResource("14_sol4v")
+
+[node name="Timer" type="Timer" parent="Wendas-restaurant-background/Wendas-restaurant-table/items/breakfast_button"]
+
+[node name="bacon2" type="Sprite2D" parent="Wendas-restaurant-background/Wendas-restaurant-table/items/breakfast_button"]
+position = Vector2(183.271, 72.3907)
+rotation = -0.521152
+scale = Vector2(0.440326, 0.440326)
+texture = ExtResource("17_nnqw3")
+
+[node name="bacon" type="Sprite2D" parent="Wendas-restaurant-background/Wendas-restaurant-table/items/breakfast_button"]
+position = Vector2(150, 65)
+rotation = 2.88102
+scale = Vector2(0.463771, 0.463771)
+texture = ExtResource("17_nnqw3")
+
+[node name="bread" type="Sprite2D" parent="Wendas-restaurant-background/Wendas-restaurant-table/items/breakfast_button"]
+position = Vector2(90, 54)
+scale = Vector2(0.46, 0.46)
+texture = ExtResource("15_lwq8p")
+
+[node name="egg" type="Sprite2D" parent="Wendas-restaurant-background/Wendas-restaurant-table/items/breakfast_button"]
+position = Vector2(85, 57)
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("16_pmmlp")
+
 [node name="back" type="Button" parent="."]
 offset_left = 34.0
 offset_top = 33.0
@@ -130,3 +169,4 @@ script = ExtResource("4_f1bqf")
 
 [connection signal="timeout" from="Wendas-restaurant-background/Wendas-restaurant-table/items/fast_food_button/Timer" to="Wendas-restaurant-background/Wendas-restaurant-table/items/fast_food_button" method="_on_timer_timeout"]
 [connection signal="timeout" from="Wendas-restaurant-background/Wendas-restaurant-table/items/all_food_button/Timer" to="Wendas-restaurant-background/Wendas-restaurant-table/items/all_food_button" method="_on_timer_timeout"]
+[connection signal="timeout" from="Wendas-restaurant-background/Wendas-restaurant-table/items/breakfast_button/Timer" to="Wendas-restaurant-background/Wendas-restaurant-table/items/breakfast_button" method="_on_timer_timeout"]

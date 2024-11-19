@@ -15,4 +15,4 @@ func _process(_delta: float) -> void:
 	if global_position.x - offset.x < 0:
 		global_position.x = offset.x
 	elif global_position.x + offset.x > 1920:
-		global_position.x = 1920 - offset.x
+		global_position.x = 1920 - offset.x  

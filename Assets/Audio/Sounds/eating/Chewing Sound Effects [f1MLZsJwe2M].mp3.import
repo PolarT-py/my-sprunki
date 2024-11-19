@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dec7incdljub2"
+path="res://.godot/imported/Chewing Sound Effects [f1MLZsJwe2M].mp3-cb77d327d622d13862df7baf1cc4163a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Sounds/eating/Chewing Sound Effects [f1MLZsJwe2M].mp3"
+dest_files=["res://.godot/imported/Chewing Sound Effects [f1MLZsJwe2M].mp3-cb77d327d622d13862df7baf1cc4163a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

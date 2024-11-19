@@ -48,3 +48,6 @@ Eating sound 2 - "Assets/Audio/Sounds/eating/Eating Sound Effect - Free Download
 
  Eating sound 3 - "Assets/Audio/Sounds/eating/Hamburger Eating Sound Effect [O0b6IrtN4zk].mp3"
  - https://www.youtube.com/watch?v=O0b6IrtN4zk&ab_channel=MayonesaAlacena
+
+ Chewing sound - "Assets/Audio/Sounds/eating/Chewing Sound Effects [f1MLZsJwe2M].mp3"
+ - https://www.youtube.com/watch?v=f1MLZsJwe2M&ab_channel=Milnk

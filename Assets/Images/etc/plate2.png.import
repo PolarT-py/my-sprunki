@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o5xich272pum"
-path="res://.godot/imported/hamburger3.png-99638a1de7440403e3b9c1fa9b13ebb7.ctex"
+uid="uid://1k7chpelxhxw"
+path="res://.godot/imported/plate2.png-a218271c7302dd168d5717109bbde662.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/refreshments/hamburger/hamburger3.png"
-dest_files=["res://.godot/imported/hamburger3.png-99638a1de7440403e3b9c1fa9b13ebb7.ctex"]
+source_file="res://Assets/Images/etc/plate2.png"
+dest_files=["res://.godot/imported/plate2.png-a218271c7302dd168d5717109bbde662.ctex"]
 
 [params]
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://d3gystbflenbk"]
 
 [ext_resource type="Script" path="res://Refreshments/foods/food.gd" id="1_eba6f"]
-[ext_resource type="Texture2D" uid="uid://n5o22eqw1ts8" path="res://Assets/Images/refreshments/hamburger/hamburger.png" id="2_8g8os"]
-[ext_resource type="Texture2D" uid="uid://lqs3xja5rxer" path="res://Assets/Images/refreshments/hamburger/hamburger1.png" id="3_r1c8v"]
-[ext_resource type="Texture2D" uid="uid://dp500rajga1ba" path="res://Assets/Images/refreshments/hamburger/hamburger2.png" id="4_fjx5g"]
-[ext_resource type="Texture2D" uid="uid://o5xich272pum" path="res://Assets/Images/refreshments/hamburger/hamburger3.png" id="5_vda12"]
+[ext_resource type="Texture2D" uid="uid://cs5w83s135v4d" path="res://Assets/Images/refreshments/hamburger/0.png" id="2_3l0qx"]
+[ext_resource type="Texture2D" uid="uid://dc4s55ifs8mt6" path="res://Assets/Images/refreshments/hamburger/1.png" id="3_8ll7v"]
+[ext_resource type="Texture2D" uid="uid://8ypv41u7iowo" path="res://Assets/Images/refreshments/hamburger/2.png" id="4_fmfbv"]
+[ext_resource type="Texture2D" uid="uid://fh1d8unvy33k" path="res://Assets/Images/refreshments/hamburger/3.png" id="5_amufo"]
 [ext_resource type="AudioStream" uid="uid://l8d5rcyjj67p" path="res://Assets/Audio/Sounds/eating/Hamburger Eating Sound Effect [O0b6IrtN4zk].mp3" id="6_4v52h"]
 [ext_resource type="Texture2D" uid="uid://dwiiee3gr2woq" path="res://Assets/Images/icons/empty.png" id="6_tn250"]
 
@@ -12,19 +12,19 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8g8os")
+"texture": ExtResource("2_3l0qx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_8g8os")
+"texture": ExtResource("2_3l0qx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_r1c8v")
+"texture": ExtResource("3_8ll7v")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fjx5g")
+"texture": ExtResource("4_fmfbv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_vda12")
+"texture": ExtResource("5_amufo")
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_tn250")

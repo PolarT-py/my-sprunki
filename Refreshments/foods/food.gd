@@ -58,6 +58,7 @@ func area_2d_shape_inside():
 func eat() -> void:
 	# Add empty.png to animation as lazy way to make them eat longer
 	# Switch to first eating frame
+	# reset all values of sprunki eating so that the animation doesn't glitch out
 	$"AnimatedSprite2D".frame = 2
 	$"AnimatedSprite2D".play()
 	$"AudioStreamPlayer".play()
@@ -65,9 +66,17 @@ func eat() -> void:
 	being_eaten_first = false
 	just_released = true
 	for area in $"AnimatedSprite2D/Button/Area2D_food".get_overlapping_areas():
-		if area.get_parent().name == "sprunki_eating":
-			area.get_parent().first_new_bite = true
-			area.get_parent().get_node("open_mouth_timer").wait_time = 0.01
+		var sprunki_eating = area.get_parent()
+		if sprunki_eating.name == "sprunki_eating":
+			sprunki_eating.first_new_bite = true
+			sprunki_eating.get_node("open_mouth_timer").wait_time = 0.01
+			#
+			sprunki_eating.get_node("Timer").stop()
+			#sprunki_eating.get_node("Timer").time_left = sprunki_eating.get_node("Timer").wait_time
+			sprunki_eating.get_node("open_mouth_timer").stop()
+			#sprunki_eating.get_node("open_mouth_timer").time_left = sprunki_eating.get_node("open_mouth_timer").wait_time
+			sprunki_eating.get_node("after_eat_timer").stop()
+			#sprunki_eating.get_node("after_eat_timer").time_left = sprunki_eating.get_node("after_eat_timer").wait_time
 
 
 func _on_button_button_down() -> void:
