@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://vgpy4y7160w0"]
+[gd_scene load_steps=21 format=3 uid="uid://vgpy4y7160w0"]
 
 [ext_resource type="Texture2D" uid="uid://82fw3qkyxvm1" path="res://Assets/Images/backgrounds/background-normal.png" id="1_ebh2h"]
 [ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_i76ia"]
@@ -8,6 +8,36 @@
 [ext_resource type="Script" path="res://Menus/exit_button.gd" id="4_hydim"]
 [ext_resource type="Script" path="res://Menus/start_button.gd" id="4_tcow5"]
 [ext_resource type="PackedScene" uid="uid://dkk0q02b484nh" path="res://Global/volume_slider.tscn" id="8_5tsqs"]
+[ext_resource type="Texture2D" uid="uid://cu1gpq7mxpfxg" path="res://Assets/Images/characters/simon/eat1.png" id="9_4yfso"]
+[ext_resource type="Texture2D" uid="uid://dxjka8ass5fxw" path="res://Assets/Images/characters/simon/eat2.png" id="9_v7vyr"]
+[ext_resource type="Texture2D" uid="uid://b7e0xsbeskn64" path="res://Assets/Images/characters/gray/idle.png" id="10_66juc"]
+[ext_resource type="Texture2D" uid="uid://cx7s0rym7341" path="res://Assets/Images/characters/gray/eat2.png" id="12_g4k4p"]
+[ext_resource type="Texture2D" uid="uid://caqx1sd7ecvsr" path="res://Assets/Images/characters/gray/eat1.png" id="13_r3r06"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_scakh"]
+radius = 104.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8fovo"]
+radius = 49.3356
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bkyd2"]
+radius = 130.5
+height = 708.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ouyjb"]
+radius = 61.0
+height = 402.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mny5d"]
+radius = 23.0
+height = 420.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwylc"]
+radius = 18.0
+height = 316.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hsm52"]
+radius = 130.388
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_i76ia")
@@ -17,6 +47,7 @@ position = Vector2(960, 540)
 texture = ExtResource("1_ebh2h")
 
 [node name="Start Button" type="Button" parent="."]
+texture_filter = 1
 offset_left = 484.0
 offset_top = 578.0
 offset_right = 1344.0
@@ -57,6 +88,9 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/normal_font = ExtResource("2_ul0q5")
 theme_override_fonts/mono_font = ExtResource("2_ul0q5")
 theme_override_fonts/bold_font = ExtResource("3_u05lf")
@@ -68,11 +102,228 @@ theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
 text = "Volume"
 
+[node name="COOL" type="Node2D" parent="."]
+
+[node name="sprunkidrops" type="Node2D" parent="COOL"]
+
+[node name="hehe9" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(526, -602)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe9"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe9"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("9_v7vyr")
+
+[node name="hehe10" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(1337, -1731)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe10"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe10"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("10_66juc")
+
+[node name="hehe11" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(341, -2090)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe11"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe11"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("9_4yfso")
+
+[node name="hehe12" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(114, -1647)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe12"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe12"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("2_xt8ic")
+
+[node name="hehe13" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(583, -1723)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe13"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe13"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("12_g4k4p")
+
+[node name="hehe14" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(980, -1300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe14"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe14"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("9_4yfso")
+
+[node name="hehe15" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(792, -1065)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe15"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe15"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("10_66juc")
+
+[node name="hehe16" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(1957, -1863)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe16"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe16"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("9_v7vyr")
+
+[node name="hehe5" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(936, -485)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe5"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe5"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("13_r3r06")
+
+[node name="hehe6" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(1453, -1063)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe6"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe6"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("13_r3r06")
+
+[node name="hehe7" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(398, -1177)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe7"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe7"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("9_4yfso")
+
+[node name="hehe8" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(710, -779)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe8"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe8"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("9_4yfso")
+
+[node name="hehe2" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(1179, -855)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe2"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe2"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("2_xt8ic")
+
+[node name="hehe4" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(1576, -432)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe4"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe4"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("9_4yfso")
+
+[node name="hehe3" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(83, -593)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe3"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe3"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("10_66juc")
+
+[node name="hehe" type="RigidBody2D" parent="COOL/sprunkidrops"]
+position = Vector2(353, -348)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/sprunkidrops/hehe"]
+shape = SubResource("CircleShape2D_scakh")
+
+[node name="Eat1" type="Sprite2D" parent="COOL/sprunkidrops/hehe"]
+position = Vector2(-9, -8)
+scale = Vector2(0.383333, 0.383333)
+texture = ExtResource("2_xt8ic")
+
+[node name="walls" type="Node2D" parent="COOL"]
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="COOL/walls"]
+position = Vector2(-200, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/walls/StaticBody2D5"]
+position = Vector2(174, -124)
+shape = SubResource("CircleShape2D_8fovo")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="COOL/walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/walls/StaticBody2D4"]
+position = Vector2(480, -139)
+shape = SubResource("CircleShape2D_8fovo")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="COOL/walls"]
+position = Vector2(361, 853)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/walls/StaticBody2D3"]
+position = Vector2(534, -139.5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bkyd2")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="COOL/walls"]
+position = Vector2(176, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/walls/StaticBody2D2"]
+position = Vector2(799, -182)
+rotation = 0.872665
+shape = SubResource("CapsuleShape2D_ouyjb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="COOL/walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="COOL/walls/StaticBody2D"]
+position = Vector2(1709, -132)
+shape = SubResource("CircleShape2D_8fovo")
+
 [node name="Temp Title" type="RichTextLabel" parent="."]
-offset_left = 389.0
-offset_top = 152.0
-offset_right = 1286.0
-offset_bottom = 574.0
+offset_left = 191.0
+offset_top = -25.0
+offset_right = 1325.0
+offset_bottom = 601.0
 theme_override_colors/table_border = Color(0, 0, 0, 1)
 theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
 theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
@@ -81,16 +332,19 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 50
 theme_override_fonts/normal_font = ExtResource("2_ul0q5")
 theme_override_fonts/mono_font = ExtResource("2_ul0q5")
 theme_override_fonts/bold_font = ExtResource("3_u05lf")
 theme_override_font_sizes/bold_italics_font_size = 200
 theme_override_font_sizes/italics_font_size = 200
 theme_override_font_sizes/mono_font_size = 200
-theme_override_font_sizes/normal_font_size = 200
+theme_override_font_sizes/normal_font_size = 300
 theme_override_font_sizes/bold_font_size = 200
 bbcode_enabled = true
-text = "My Sprunki"
+text = "   My Sprunki"
 
 [node name="madeingodot" type="RichTextLabel" parent="."]
 offset_left = 1589.0
@@ -105,6 +359,9 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/normal_font = ExtResource("2_ul0q5")
 theme_override_fonts/mono_font = ExtResource("2_ul0q5")
 theme_override_fonts/bold_font = ExtResource("3_u05lf")
@@ -129,6 +386,9 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/normal_font = ExtResource("2_ul0q5")
 theme_override_fonts/mono_font = ExtResource("2_ul0q5")
 theme_override_fonts/bold_font = ExtResource("3_u05lf")
@@ -143,5 +403,28 @@ text = "This game is a fan project inspired by Sprunki, created by NyankoBfLol. 
 [node name="simon" type="Sprite2D" parent="."]
 position = Vector2(1287, 564)
 texture = ExtResource("2_xt8ic")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="simon"]
+position = Vector2(0, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="simon/StaticBody2D"]
+position = Vector2(15, -34)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mny5d")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="simon"]
+position = Vector2(0, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="simon/StaticBody2D2"]
+position = Vector2(15, -34)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_jwylc")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="simon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="simon/StaticBody2D3"]
+position = Vector2(15, -34)
+rotation = 1.5708
+shape = SubResource("CircleShape2D_hsm52")
 
 [node name="volume_slider" parent="." instance=ExtResource("8_5tsqs")]

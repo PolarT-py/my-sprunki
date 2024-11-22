@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bjyrmndfrdg6k"]
+[gd_scene load_steps=12 format=3 uid="uid://bjyrmndfrdg6k"]
 
 [ext_resource type="Texture2D" uid="uid://82fw3qkyxvm1" path="res://Assets/Images/backgrounds/background-normal.png" id="1_47q0p"]
 [ext_resource type="Script" path="res://Menus/map_menu.gd" id="1_r6bud"]
@@ -8,6 +8,8 @@
 [ext_resource type="FontFile" uid="uid://j4gq8bvs6dw7" path="res://Assets/Fonts/inconsolata/InconsolataZi4varlvarquRegular-42gD.otf" id="5_j8kjr"]
 [ext_resource type="Script" path="res://Menus/back.gd" id="5_sf50b"]
 [ext_resource type="FontFile" uid="uid://dkkwsr4x6kyvi" path="res://Assets/Fonts/inconsolata/InconsolataZi4varlvarquBold-o4Xz.otf" id="6_1ovif"]
+[ext_resource type="Script" path="res://Menus/button_house.gd" id="9_3281y"]
+[ext_resource type="Texture2D" uid="uid://kt48wps74xdq" path="res://Assets/Images/map_icons/house.svg" id="9_wygrk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7nyjr"]
 
@@ -57,7 +59,6 @@ offset_left = 322.0
 offset_top = 673.0
 offset_right = 632.0
 offset_bottom = 741.0
-tooltip_text = "Wenda's restaurant"
 theme_override_colors/table_border = Color(0, 0, 0, 1)
 theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
 theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
@@ -66,6 +67,9 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 10
 theme_override_fonts/normal_font = ExtResource("5_j8kjr")
 theme_override_fonts/mono_font = ExtResource("5_j8kjr")
 theme_override_fonts/bold_font = ExtResource("6_1ovif")
@@ -76,6 +80,48 @@ theme_override_font_sizes/normal_font_size = 60
 theme_override_font_sizes/bold_font_size = 60
 bbcode_enabled = true
 text = "Wenda's"
+
+[node name="House" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="House"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 844.0
+offset_top = 575.0
+offset_right = 1135.0
+offset_bottom = 847.0
+script = ExtResource("9_3281y")
+
+[node name="House" type="Sprite2D" parent="House"]
+position = Vector2(990, 723)
+scale = Vector2(1.52604, 1.52604)
+texture = ExtResource("9_wygrk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="House"]
+offset_left = 924.0
+offset_top = 833.0
+offset_right = 1228.0
+offset_bottom = 909.0
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/normal_font = ExtResource("5_j8kjr")
+theme_override_fonts/mono_font = ExtResource("5_j8kjr")
+theme_override_fonts/bold_font = ExtResource("6_1ovif")
+theme_override_font_sizes/bold_italics_font_size = 60
+theme_override_font_sizes/italics_font_size = 60
+theme_override_font_sizes/mono_font_size = 60
+theme_override_font_sizes/normal_font_size = 60
+theme_override_font_sizes/bold_font_size = 60
+text = "House"
 
 [node name="back" type="Button" parent="."]
 offset_left = 34.0

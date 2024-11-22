@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwi52lsy04i8h"]
+
+[ext_resource type="Script" path="res://Locations/back_map.gd" id="1_f1vxj"]
+[ext_resource type="Script" path="res://Locations/choose_sprunki.gd" id="2_3g761"]
+[ext_resource type="Texture2D" uid="uid://cu1gpq7mxpfxg" path="res://Assets/Images/characters/simon/eat1.png" id="3_aw7nt"]
+[ext_resource type="Texture2D" uid="uid://b7e0xsbeskn64" path="res://Assets/Images/characters/gray/idle.png" id="4_2teoe"]
+
+[node name="house" type="Node2D"]
+
+[node name="back" type="Button" parent="."]
+offset_left = 34.0
+offset_top = 33.0
+offset_right = 198.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 40
+button_mask = 3
+text = "Back"
+script = ExtResource("1_f1vxj")
+
+[node name="activities" type="Node2D" parent="."]
+
+[node name="choose_sprunki" type="Button" parent="activities"]
+offset_left = 21.0
+offset_top = 216.0
+offset_right = 356.0
+offset_bottom = 462.0
+theme_override_font_sizes/font_size = 30
+button_mask = 3
+text = "
+
+
+
+Choose your Sprunki"
+script = ExtResource("2_3g761")
+
+[node name="Sprite2D" type="Sprite2D" parent="activities/choose_sprunki"]
+position = Vector2(98, 69)
+scale = Vector2(0.378333, 0.378333)
+texture = ExtResource("3_aw7nt")
+
+[node name="Sprite2D2" type="Sprite2D" parent="activities/choose_sprunki"]
+position = Vector2(236, 67)
+scale = Vector2(0.396667, 0.396667)
+texture = ExtResource("4_2teoe")

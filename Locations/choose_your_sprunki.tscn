@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://0kvhs3t3loly"]
+
+[ext_resource type="Script" path="res://Locations/back_home_activity.gd" id="1_dym4a"]
+[ext_resource type="Script" path="res://Locations/choose_gray_button.gd" id="2_77etk"]
+[ext_resource type="Texture2D" uid="uid://b7e0xsbeskn64" path="res://Assets/Images/characters/gray/idle.png" id="2_726om"]
+[ext_resource type="Texture2D" uid="uid://tiswikwvqws1" path="res://Assets/Images/etc/white.png" id="3_y6u1r"]
+[ext_resource type="Texture2D" uid="uid://ccsgf6cu6a8be" path="res://Assets/Images/characters/simon/idle.png" id="5_jgiio"]
+[ext_resource type="Script" path="res://Locations/choose_simon_button.gd" id="5_xwpb0"]
+
+[node name="choose_your_sprunki" type="Node2D"]
+
+[node name="back" type="Button" parent="."]
+offset_left = 34.0
+offset_top = 33.0
+offset_right = 198.0
+offset_bottom = 99.0
+theme_override_font_sizes/font_size = 40
+button_mask = 3
+text = "Back"
+script = ExtResource("1_dym4a")
+
+[node name="options" type="Node2D" parent="."]
+
+[node name="Choose_gray_button" type="Button" parent="options"]
+offset_left = 131.0
+offset_top = 168.0
+offset_right = 511.0
+offset_bottom = 1042.0
+button_mask = 3
+script = ExtResource("2_77etk")
+
+[node name="rectangle" type="Sprite2D" parent="options/Choose_gray_button"]
+modulate = Color(0.16, 0.16, 0.16, 1)
+position = Vector2(189.5, 697.5)
+scale = Vector2(1.05, 0.923333)
+texture = ExtResource("3_y6u1r")
+
+[node name="shadow" type="Sprite2D" parent="options/Choose_gray_button"]
+modulate = Color(0.08, 0.08, 0.08, 1)
+position = Vector2(189.5, 559.5)
+scale = Vector2(1.05, 0.41)
+texture = ExtResource("3_y6u1r")
+
+[node name="Idle" type="Sprite2D" parent="options/Choose_gray_button"]
+position = Vector2(183, 277)
+texture = ExtResource("2_726om")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="options/Choose_gray_button"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 620.0
+offset_right = 316.0
+offset_bottom = 757.0
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0.333333, 0.333333, 0.333333, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.87, 0.87, 0.87, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 20
+theme_override_font_sizes/normal_font_size = 100
+text = "Gray"
+fit_content = true
+
+[node name="Choose_simon_button" type="Button" parent="options"]
+offset_left = 611.0
+offset_top = 168.0
+offset_right = 991.0
+offset_bottom = 1042.0
+button_mask = 3
+script = ExtResource("5_xwpb0")
+
+[node name="rectangle" type="Sprite2D" parent="options/Choose_simon_button"]
+modulate = Color(0.16, 0.16, 0.16, 1)
+position = Vector2(189.5, 697.5)
+scale = Vector2(1.05, 0.923333)
+texture = ExtResource("3_y6u1r")
+
+[node name="shadow" type="Sprite2D" parent="options/Choose_simon_button"]
+modulate = Color(0.08, 0.08, 0.08, 1)
+position = Vector2(189.5, 559.5)
+scale = Vector2(1.05, 0.41)
+texture = ExtResource("3_y6u1r")
+
+[node name="Idle" type="Sprite2D" parent="options/Choose_simon_button"]
+position = Vector2(183, 277)
+texture = ExtResource("5_jgiio")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="options/Choose_simon_button"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 621.0
+offset_right = 360.0
+offset_bottom = 758.0
+theme_override_colors/table_border = Color(0, 0, 0, 1)
+theme_override_colors/table_even_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/table_odd_row_bg = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(1, 0.956863, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.4, 0.38, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 20
+theme_override_font_sizes/normal_font_size = 100
+text = "Simon"
+fit_content = true
+
+[connection signal="pressed" from="options/Choose_gray_button" to="options/Choose_gray_button" method="_on_pressed"]
+[connection signal="pressed" from="options/Choose_simon_button" to="options/Choose_simon_button" method="_on_pressed"]

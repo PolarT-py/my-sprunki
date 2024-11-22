@@ -33,6 +33,10 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+	#for area in $"AnimatedSprite2D/Button/Area2D_food".get_overlapping_areas():
+		#var sprunki_eating = area.get_parent()
+		#if sprunki_eating.name == "sprunki_eating":
+			#print(sprunki_eating.get_node("Timer").time_left)
 	area_2d_shape_inside()
 	if dragging and not being_eaten:
 		# Dragging food in the air, and switching to food dragging frame

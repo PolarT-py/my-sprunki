@@ -24,15 +24,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_tn250")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_tn250")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_tn250")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_tn250")
 }],
 "loop": false,
 "name": &"default",

@@ -21,7 +21,7 @@ var the_center = Vector2(1000, 450)
 
 
 func _ready() -> void:
-	change_char("simon")
+	change_char(Global.character)
 	# Smoothly go from where sprunki was last time to the "middle" of the screen
 	global_position = Global.your_sprunkis_last_position_before_going_to_eat
 	tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_CIRC)
@@ -101,7 +101,6 @@ func _on_open_mouth_timer_timeout() -> void:
 	first_new_bite = true
 	$"Timer".stop()
 	$"Timer".start()
-	#print("New bite timeout!")
 
 
 func _on_after_eat_timer_timeout() -> void:
