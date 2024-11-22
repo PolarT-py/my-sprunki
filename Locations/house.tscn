@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwi52lsy04i8h"]
+[gd_scene load_steps=6 format=3 uid="uid://dwi52lsy04i8h"]
 
+[ext_resource type="Texture2D" uid="uid://82fw3qkyxvm1" path="res://Assets/Images/backgrounds/background-normal.png" id="1_8ytwk"]
 [ext_resource type="Script" path="res://Locations/back_map.gd" id="1_f1vxj"]
 [ext_resource type="Script" path="res://Locations/choose_sprunki.gd" id="2_3g761"]
 [ext_resource type="Texture2D" uid="uid://cu1gpq7mxpfxg" path="res://Assets/Images/characters/simon/eat1.png" id="3_aw7nt"]
 [ext_resource type="Texture2D" uid="uid://b7e0xsbeskn64" path="res://Assets/Images/characters/gray/idle.png" id="4_2teoe"]
 
 [node name="house" type="Node2D"]
+
+[node name="Background-normal" type="Sprite2D" parent="."]
+modulate = Color(0.31, 0.31, 0.31, 1)
+position = Vector2(960, 540)
+texture = ExtResource("1_8ytwk")
 
 [node name="back" type="Button" parent="."]
 offset_left = 34.0

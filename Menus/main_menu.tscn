@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://vgpy4y7160w0"]
+[gd_scene load_steps=22 format=3 uid="uid://vgpy4y7160w0"]
 
 [ext_resource type="Texture2D" uid="uid://82fw3qkyxvm1" path="res://Assets/Images/backgrounds/background-normal.png" id="1_ebh2h"]
 [ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_i76ia"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dkkwsr4x6kyvi" path="res://Assets/Fonts/inconsolata/InconsolataZi4varlvarquBold-o4Xz.otf" id="3_u05lf"]
 [ext_resource type="Script" path="res://Menus/exit_button.gd" id="4_hydim"]
 [ext_resource type="Script" path="res://Menus/start_button.gd" id="4_tcow5"]
+[ext_resource type="Script" path="res://Menus/sprunkidrops.gd" id="7_csc0e"]
 [ext_resource type="PackedScene" uid="uid://dkk0q02b484nh" path="res://Global/volume_slider.tscn" id="8_5tsqs"]
 [ext_resource type="Texture2D" uid="uid://cu1gpq7mxpfxg" path="res://Assets/Images/characters/simon/eat1.png" id="9_4yfso"]
 [ext_resource type="Texture2D" uid="uid://dxjka8ass5fxw" path="res://Assets/Images/characters/simon/eat2.png" id="9_v7vyr"]
@@ -105,6 +106,7 @@ text = "Volume"
 [node name="COOL" type="Node2D" parent="."]
 
 [node name="sprunkidrops" type="Node2D" parent="COOL"]
+script = ExtResource("7_csc0e")
 
 [node name="hehe9" type="RigidBody2D" parent="COOL/sprunkidrops"]
 position = Vector2(526, -602)

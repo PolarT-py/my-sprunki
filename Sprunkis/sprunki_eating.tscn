@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://fh6o20vcn8cm"]
+[gd_scene load_steps=3 format=3 uid="uid://fh6o20vcn8cm"]
 
-[ext_resource type="Texture2D" uid="uid://ccsgf6cu6a8be" path="res://Assets/Images/characters/simon/idle.png" id="1_de8kh"]
 [ext_resource type="Script" path="res://Sprunkis/sprunki_eating.gd" id="1_klxg7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7av37"]
@@ -14,7 +13,6 @@ script = ExtResource("1_klxg7")
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(-13, -11)
 scale = Vector2(0.656667, 0.656667)
-texture = ExtResource("1_de8kh")
 
 [node name="face" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_7av37")

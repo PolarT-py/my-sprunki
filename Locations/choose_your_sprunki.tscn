@@ -1,13 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://0kvhs3t3loly"]
+[gd_scene load_steps=11 format=3 uid="uid://0kvhs3t3loly"]
 
 [ext_resource type="Script" path="res://Locations/back_home_activity.gd" id="1_dym4a"]
+[ext_resource type="Texture2D" uid="uid://82fw3qkyxvm1" path="res://Assets/Images/backgrounds/background-normal.png" id="1_wpp2l"]
 [ext_resource type="Script" path="res://Locations/choose_gray_button.gd" id="2_77etk"]
 [ext_resource type="Texture2D" uid="uid://b7e0xsbeskn64" path="res://Assets/Images/characters/gray/idle.png" id="2_726om"]
+[ext_resource type="Script" path="res://Locations/selected_box.gd" id="2_i2dm7"]
 [ext_resource type="Texture2D" uid="uid://tiswikwvqws1" path="res://Assets/Images/etc/white.png" id="3_y6u1r"]
 [ext_resource type="Texture2D" uid="uid://ccsgf6cu6a8be" path="res://Assets/Images/characters/simon/idle.png" id="5_jgiio"]
 [ext_resource type="Script" path="res://Locations/choose_simon_button.gd" id="5_xwpb0"]
+[ext_resource type="FontFile" uid="uid://j4gq8bvs6dw7" path="res://Assets/Fonts/inconsolata/InconsolataZi4varlvarquRegular-42gD.otf" id="9_3wwse"]
+[ext_resource type="FontFile" uid="uid://dkkwsr4x6kyvi" path="res://Assets/Fonts/inconsolata/InconsolataZi4varlvarquBold-o4Xz.otf" id="10_cijhx"]
 
 [node name="choose_your_sprunki" type="Node2D"]
+
+[node name="Background-normal" type="Sprite2D" parent="."]
+modulate = Color(0.31, 0.31, 0.31, 1)
+position = Vector2(960, 540)
+texture = ExtResource("1_wpp2l")
 
 [node name="back" type="Button" parent="."]
 offset_left = 34.0
@@ -18,6 +27,29 @@ theme_override_font_sizes/font_size = 40
 button_mask = 3
 text = "Back"
 script = ExtResource("1_dym4a")
+
+[node name="selected_box" type="Node2D" parent="."]
+script = ExtResource("2_i2dm7")
+
+[node name="top" type="Sprite2D" parent="selected_box"]
+position = Vector2(321.5, 160)
+scale = Vector2(1.37, 0.0533333)
+texture = ExtResource("3_y6u1r")
+
+[node name="bottom" type="Sprite2D" parent="selected_box"]
+position = Vector2(321.5, 1050)
+scale = Vector2(1.37, 0.0533333)
+texture = ExtResource("3_y6u1r")
+
+[node name="left" type="Sprite2D" parent="selected_box"]
+position = Vector2(123.5, 597)
+scale = Vector2(0.05, 2.96667)
+texture = ExtResource("3_y6u1r")
+
+[node name="right" type="Sprite2D" parent="selected_box"]
+position = Vector2(519.25, 597)
+scale = Vector2(0.0516667, 2.96667)
+texture = ExtResource("3_y6u1r")
 
 [node name="options" type="Node2D" parent="."]
 
@@ -109,6 +141,22 @@ theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 20
 theme_override_font_sizes/normal_font_size = 100
 text = "Simon"
+fit_content = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 305.0
+offset_top = -1.0
+offset_right = 1769.0
+offset_bottom = 152.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 30
+theme_override_fonts/normal_font = ExtResource("9_3wwse")
+theme_override_fonts/bold_font = ExtResource("10_cijhx")
+theme_override_font_sizes/normal_font_size = 140
+theme_override_font_sizes/bold_font_size = 140
+text = "Choose your Sprunki!"
 fit_content = true
 
 [connection signal="pressed" from="options/Choose_gray_button" to="options/Choose_gray_button" method="_on_pressed"]
